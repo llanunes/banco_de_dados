@@ -1,0 +1,83 @@
+Um banco de dados pode ser formado por uma ou várias tabelas no modelo lógico.
+
+sem letras maiusculas no início, acentos, pontos e símbolos.
+pode somente '_' e 
+
+quando for criar uma tabela, no nome coloca tbl antes. Ex: tblprodutos. tblfornecedores.
+quando criar um data base, adicionar db antes no nome. Ex: dbveterinaria. dbmercado.
+
+Entidade --> Tabela
+Atributo --> Campo
+Registro --> conjunto de campos criados na tabela que formam uma informação. Instancia.
+String --> varchar
+
+Data de nascimento --> date ou datetime (date: data - 23/08/2005. datetime: 23/08/2005 10:20:00)
+Valor de produtos --> float
+Quantidade de itens --> integer
+
+Campos e tipos de dados  - os tipos de dados podem variar conforme o software do banco de dados utilizado.
+* Texto
+* Numerico
+* Data
+* Real
+* Auto incremento
+* Booleano
+
+
+tipos de texto mais usados - variáveis
+* text - 65.535
+* varchar - 65.535
+* char - 255
+
+tipos de inteiros mais usados - variáveis
+
+* tinyint - -128 a 117
+* int - -2.147.483.648 a 2.147.483.647
+
+
+data: AAAA-MM-DD (ano, mes, dia)
+
+Auto-incremento {
+    id - elemento que não se repete. Diz que ele é um inteiro e que é um auto incremente para que ele possa somar mais um a cada vez que recebe um dado.
+}
+
+
+***************************************
+
+CHAVE PRIMÁRIA
+
+
+* nunca há repetição dentro da mesma tabela
+* permite e garante a individualidade das informações
+* otimiza a busca de informaçÕes no  banco
+* permite gerar um relacionamento com outras identidades. Sem ela NÃO HÁ RELACIONAMENTO. Se colocar errado não da para mudar, deverá apagar a tabela e criar novamente. CHAVE PRIMARIA É O IDENTIFICADOR.
+ter um campo único para o ID.
+
+* Regras para identificarmos a chave primária (ID): *
+
+ Campo único, ou seja, que não se repita;
+ Campos com tamanhos pequenos, pois facilita no BD;
+ Campo que nunca pode ser alterado;
+ Campo que nunca seja do tipo texto;
+ Campos que sejam de preenchimento obrigatório;
+ Caso não haja um campo com essas característica defina
+para o próprio BD crie e gerencie esse campo, usando o
+tipo de dados “Auto-Incremento”.
+
+ID : Integer, notNull, Auto-Incremento
+
+***************************************
+
+***************************************
+
+CHAVE ESTRANGEIRA
+
+Chave estrangeira permite criar o relacionamento
+entre tabelas utilizando a chave primária.
+
+Uma chave primária transforma-se em chave estrangeira em outra tabela para criar a interligação entre as mesmas.
+
+geralmente a tabela que tem N receberá a chave estrangeira --> GERALMENTE <-- 
+
+**************************************
+

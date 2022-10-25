@@ -1,0 +1,18 @@
+Exercícios - Banco de Dados
+
+
+1 - o banco de dados, como o próprio nome já diz, armazena dados de diversos tipos. Esses dados são transformados em instancias que geram informações para mais tarde serem consumidas.
+
+2-
+
+3- SGBD - Sistema Gerenciador de banco de dados. É o motor do banco de dados, cérebro. Tudo tem que passar pelo SGBD, tudo é manipulado no banco por ele. Responsável por salvar dados no HD, ligar dados e metadados, manter em memória os dados mais acessados, disponibilizar uma interface para programas e usuários externos acessem o banco de dados. Sem ele, o BD não funciona. Tecnologia que está embarcada em todos os bancos de dados.
+
+4 - 
+
+5 - DDL (Data Definition Language) - especificação do esquema do BD (dados e seus tipos de dados, índices, etc), no método DDL podemos usar (Create, Alter, Drop). Linguagem de definição dos dados. DDL é quem vai criar o espaço para o mínimo espacinho de dado para ser guardado. CRIAR ALGUMA COISA.
+
+DML (Data Manipulation Language) - Manipulação de dados (Insertaram, Update, Delete, Select)
+Processamento eficaz de consultas considera relacionamentos, predicados de seleção, volume de dados, índice. MANIPULAR ALGUMA COISA.
+
+DCL (Data Control Language) - Responsável pelas permissões de acesso a base de dados. CONTROLE DE ALGUMA COISA.
+ 

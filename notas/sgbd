@@ -1,0 +1,39 @@
+Aula 02
+
+SGBD - Sistema Gerenciador de banco de dados. É o motor do banco de dados, cérebro. Tudo tem que passar pelo SGBD, tudo é manipulado no banco por ele. Responsável por salvar dados no HD, ligar dados e metadados, manter em memória os dados mais acessados, disponibilizar uma interface para programas e usuários externos acessem o banco de dados. Sem ele, o BD não funciona. Tecnologia que está embarcada em todos os bancos de dados.
+
+Usuários/Programadores > Consultas/Programas > SGBD >> Catálogo (meta-dados) - banco de Dados.
+
+Regras:
+
+* Auto-Contenção
+O banco de dados não é apenas um repositório de dados e sim um ambiente para armazenamento de dados. Deve haver uma organização.
+* Independência dos dados
+Essa regra garante que toda a estrutura dos dados permaneça intacta mesmo quando utilizarmos aplicações externas para acessar e controlar os dados, seja nenhuma estrutura dos dados pode ser alterada pela aplicação. 
+* Abstração de dados
+Nessa regra em nenhuma situação o usuário final pode ter acesso direto ao banco de dados. Deve permitir que o usuário tenha acesso somente ao que precisa.
+* Visões 
+Cada usuário pode exigir ou mesmo precisar de uma visão diferenciada da base de dados.
+* Transação
+Controle de concorrência, ou seja, o acesso ao mesmo dado deve ser de forma controlada e possível de acontecer. Pode acessar ao mesmo tempo, o mesmo dado.
+
+O SGBD possui 3 métodos de acesso:
+
+DDL (Data Definition Language) - especificação do esquema do BD (dados e seus tipos de dados, índices, etc), no método DDL podemos usar (Create, Alter, Drop). Linguagem de definição dos dados. DDL é quem vai criar o espaço para o mínimo espacinho de dado para ser guardado. CRIAR ALGUMA COISA.
+
+DML (Data Manipulation Language) - Manipulação de dados (Insertaram, Update, Delete, Select)
+Processamento eficaz de consultas considera relacionamentos, predicados de seleção, volume de dados, índice. MANIPULAR ALGUMA COISA.
+
+DCL (Data Control Language) - Responsável pelas permissões de acesso a base de dados. CONTROLE DE ALGUMA COISA.
+
+
+
+Localiza as Entidades
+
+1 atributo identificador apenas por entidade, que será o identificador de cada instancia.
+	Criar o ID para ser o atributo identificador.
+
+Atributo simples = bolinha sem preenchimento. Apenas um valor. EX: nome.
+Atributo identificador = bolinha preenchida. Único para cada entidade. ID.
+Atributo composto = um atributo com ramificações. EX: endereço: rua, cep, numero, estado…
+Atributo multivalorado = mais de um valor no atributo. EX: telefone um pessoa pode ter mais de um.
