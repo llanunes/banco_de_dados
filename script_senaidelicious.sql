@@ -1,8 +1,8 @@
 # projeto pizzaria senailicious
 
 create database db_senailicious;
-
 use db_senailicious;
+show tables;
 
 ##############################################################
 
@@ -21,6 +21,7 @@ create table tbl_produto (
 create table tbl_bebida (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tipo VARCHAR(45) NOT NULL,
+    imagem VARCHAR(200),
     id_produto INT NOT NULL,
    constraint FK_produto_bebida
    foreign key (id_produto)
@@ -31,6 +32,7 @@ create table tbl_bebida (
 create table tbl_pizza (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	tipo VARCHAR(45) NOT NULL,
+    imagem VARCHAR (200),
     quantidade_vezes_favorito INT NOT NULL,
     id_produto INT NOT NULL,
     constraint FK_produto_pizza
