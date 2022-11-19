@@ -4,7 +4,6 @@ create database db_senailicious;
 
 use db_senailicious;
 
-
 ##############################################################
 
 # tabelas de PRODUTOS 
@@ -48,18 +47,41 @@ create table tbl_cliente (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(80) NOT NULL,
     email VARCHAR (256) NOT NULL,
+    telefone VARCHAR (20) NOT NULL,
+    celular VARCHAR (20) NOT NULL,
+    mensagem TEXT NOT NULL,
     unique index(id)
 );
 
-create table tbl_celular (
+create table tbl_tipo_mensagem (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ddd VARCHAR(6) NOT NULL,
-    numero VARCHAR(20) NOT NULL,
+    tipo VARCHAR (15) NOT NULL,
     id_cliente INT NOT NULL,
-    constraint FK_cliente_celular
+    constraint FK_cliente_tipo_mensagem
     foreign key (id_cliente)
     references tbl_cliente(id),
-    unique index(id)
+    unique index (id)
 );
 
-create table tbl_telefone
+#####################################################################
+
+# tabela administrador
+
+create table tbl_administrador (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(256) NOT NULL,
+    senha VARCHAR(100) NOT NULL,
+    unique index (id)
+);
+
+#####################################################################
+
+# tabela de servicos
+
+create table tbl_servicos (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    icone VARCHAR(200),
+    nome VARCHAR (50),
+    unique index (id)
+);
+
