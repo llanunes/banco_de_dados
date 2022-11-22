@@ -100,9 +100,11 @@ create table tbl_filme (
     id_classificacao int not null, 
     constraint FK_classificacao_filme # apenas um nome (apelido) para a FK
     foreign key (id_classificacao) # indica quem sera a chave estrangeira nessa tabela
-    references tbl_classificacao (id), # de onde virá a PK e o id dela
+    references tbl_classificacao(id), # de onde virá a PK e o id dela
     unique index(id)
-);        
+);
+
+DROP TABLE tbl_filme;    
 
 # permite alterar o nome da tabela
 rename table tbl_filme to tbl_filme2;
@@ -131,7 +133,6 @@ create table tbl_ator_diretor(
     references tbl_sexo(id),
     unique index(id)
 );
-
 
 create table tbl_ator(
 	id INT not null auto_increment primary key,
@@ -169,6 +170,22 @@ create table tbl_genero_filme(
     unique index(id)
 );
 
+DROP TABLE tbl_filme_genero;
+
+create table tbl_filme_genero (
+	id int not null auto_increment primary key,
+    id_filme int not null, #Atributo para receber a FK
+    id_genero int not null, #Atributo para receber a FK
+    constraint FK_filme_filme_genero  #É apenas um nome (apelido) para FK
+		foreign key (id_filme) #Identifica quem será a FK nesta tabela
+		references tbl_filme (id), #De onde virá a PK 
+        
+        constraint FK_genero_filme_genero  #É apenas um nome (apelido) para FK
+		foreign key (id_genero) #Identifica quem será a FK nesta tabela
+		references tbl_genero (id), #De onde virá a PK 
+        
+	unique index(id)
+);
 
 
 

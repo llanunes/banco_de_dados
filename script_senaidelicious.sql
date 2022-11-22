@@ -81,9 +81,6 @@ create table tbl_mensagem (
     unique index(id)
 );
 
-drop table tbl_mensagem;
-
-
 
 create table tbl_tipo_mensagem (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

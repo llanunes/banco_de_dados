@@ -21,7 +21,7 @@ insert into tbl_sexo (
         'Masculino'
     );
     
-SELECT * FROM tbl_classificacao; 
+SELECT * FROM tbl_sexo; 
 
 
 # tabela de classificacao
@@ -66,7 +66,7 @@ VALUES (
         '2022-02-24',
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/93/20/20120876.jpg',
         'The Godfather',
-        16
+        4
     ), (
         'O REI LEÃO',
         '01:29:00',
@@ -75,7 +75,7 @@ VALUES (
         '2011-08-26',
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/84/28/19962110.jpg',
         'The Lion King',
-        13
+        1
     ), (
         'FORREST GUMP - O CONTADOR DE HISTÓRIAS',
         '02:20:00',
@@ -84,7 +84,7 @@ VALUES (
         null,
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/30/21/19874092.jpg',
         'Forrest Gump',
-        16
+        4
     ), (
         'À ESPERA DE UM MILAGRE',
         '03:09:00',
@@ -93,7 +93,7 @@ VALUES (
         null,
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/66/66/20156966.jpg',
         'The Green Mile',
-        16
+        4
     ), (
         'VINGADORES: ULTIMATO',
         '03:01:00',
@@ -102,7 +102,7 @@ VALUES (
         null,
         'https://br.web.img2.acsta.net/c_310_420/pictures/19/04/26/17/30/2428965.jpg',
         'Avengers: Endgame',
-        15
+        3
     ), (
         'BATMAN - O CAVALEIRO DAS TREVAS',
         '02:32:00',
@@ -111,7 +111,7 @@ VALUES (
         null,
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/86/98/32/19870786.jpg',
         'The Dark Knight',
-        15
+        3
     );
 
 UPDATE tbl_classificacao SET nome = 'LI';
@@ -137,7 +137,7 @@ INSERT INTO
         '1970-07-30',
         NULL,
         'https://www.adorocinema.com/personalidades/personalidade-30367/biografia/',
-        1
+        2
     ),
     (
 		'Christian Bale',
@@ -153,7 +153,7 @@ INSERT INTO
 		'1979-04-04',
 		'2008/01/22', 
 		'https://www.adorocinema.com/personalidades/personalidade-33198/biografia/',
-        3
+        2
     ),
     (
 		'Aaron Edward Eckhart',
@@ -161,7 +161,7 @@ INSERT INTO
 		'1968-03-12',
         NULL,
 		'https://www.adorocinema.com/personalidades/personalidade-21075/biografia/',
-		4
+		2
     ),
     (
 		'Jonathan Kolia Favreau',
@@ -169,7 +169,7 @@ INSERT INTO
         '1966-10-19',
         NULL,
         'https://br.web.img3.acsta.net/c_310_420/pictures/15/09/18/12/27/315343.jpg',
-        5
+        2
     ), 
     (
 		'ÍCARO SILVA',
@@ -177,7 +177,7 @@ INSERT INTO
         '1987-03-19',
         NULL,
         'https://br.web.img3.acsta.net/c_310_420/pictures/19/11/22/19/58/2673323.jpg',
-        6
+        2
     ),
     (
 		'Donald McKinley Glover Jr.',
@@ -185,7 +185,7 @@ INSERT INTO
         '1983-09-25',
         NULL,
         'https://br.web.img3.acsta.net/c_310_420/pictures/15/09/28/12/11/478796.jpg',
-        7
+        2
     ), 
     (
 		'Beyoncé Giselle Knowles-Carter',
@@ -193,7 +193,7 @@ INSERT INTO
         '1981-09-04',
         NULL,
         'https://br.web.img2.acsta.net/c_310_420/pictures/19/04/10/17/53/4934423.jpg',
-        8
+        1
     ),
     (
 		'Francis Ford Coppola',
@@ -201,7 +201,7 @@ INSERT INTO
         '1939-04-07',
         NULL,
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/35/21/99/19187501.jpg',
-        9
+        2
     ), 
     (
 		'Marlon Brando',
@@ -209,15 +209,35 @@ INSERT INTO
         '1924-04-03'
         '2004-07-1',
         'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/51/54/20040663.jpg',
-        10
-    ),
-    (
-		
-    ),
-    (
-		
+        2
     )
     ;
+    
+    
+    insert into tbl_genero (nome) 
+		values  ('Policial'),
+				('Drama'),
+				('Aventura'),
+				('Animação'),
+				('Musical'),
+				('Comédia'),
+				('Romance'),
+				('Fantasia'),
+				('Suspense'),
+				('Ação');
+                
+                
+                
+insert into tbl_filme_genero (id_filme, id_genero)
+	values (4,1),
+	       (1,2),
+	       (4,3),
+	       (4,4),
+	       (3,5),
+	       (3,6);
+
+
+
     
 desc tbl_filme;
 
