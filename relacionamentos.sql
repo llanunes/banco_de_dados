@@ -9,12 +9,19 @@ select tbl_filme.nome AS nomeFilme, tbl_filme.sinopse, tbl_filme.data_lancamento
 		where tbl_filme.id = tbl_filme_genero.id_filme AND 
         tbl_genero.id = tbl_filme_genero.id_genero;
         
+        
+        
+        
+        
+        
+        
+        
 # inner join         
 select tbl_filme.nome AS nomeFilme, tbl_filme.sinopse, tbl_filme.data_lancamento, tbl_filme.genero.nome AS nomeGenero, tbl_classificacao.nome AS nomeClassificacao, tbl_classificacao.classificacao     
 		FROM tbl_filme 
 # se relaciona com
 			inner join tbl_filme_genero
-				on tbl_filme.id = tbl_filme_genero.id_fillme
+				on tbl_filme.id = tbl_filme_genero.id_filme
 					inner join tbl_genero 
 						on tbl_genero.id = tbl_filme_genero.id_genero
                         
