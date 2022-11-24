@@ -19,8 +19,16 @@ select * from tbl_tipo_produto;
 
 drop table tbl_pizza;
 drop table tbl_bebida;
+drop table tbl_tipo_produto;
+drop table tbl_produto_ingrediente;
+drop table tbl_mensagem;
+drop table tbl_ingrediente;
 drop table tbl_produto;
 drop table tbl_produto_ingrediente;
+drop table tbl_tipo_produto;
+drop table tbl_tipo_pizza;
+drop table tbl_tipo_bebida;
+drop table tbl_tipo_mensagem;
 
 
 ##############################################################
@@ -53,6 +61,7 @@ create table tbl_tipo_produto (
     tipo VARCHAR(20),
     unique index(id)
 );
+
 
 create table tbl_produto_ingrediente (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
