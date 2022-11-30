@@ -29,6 +29,7 @@ drop table tbl_tipo_produto;
 drop table tbl_tipo_pizza;
 drop table tbl_tipo_bebida;
 drop table tbl_tipo_mensagem;
+drop table teste;
 
 
 ##############################################################
@@ -38,6 +39,13 @@ drop table tbl_tipo_mensagem;
 create table tbl_ingrediente(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR (30),
+    unique index(id)
+);
+
+
+create table tbl_tipo_produto (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(20),
     unique index(id)
 );
 
@@ -55,27 +63,27 @@ create table tbl_produto (
     unique index (id)
 );
 
-
-create table tbl_tipo_produto (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR(20),
-    unique index(id)
-);
-
+ALTER TABLE tbl_produto
+	MODIFY column preco DECIMAL(4,2);
 
 create table tbl_produto_ingrediente (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_produto INT NOT NULL,
-    id_ingrediente INT NOT NULL,
-    constraint FK_produto_produto_ingrediente
-		foreign key (id_produto)
-			references tbl_produto(id),
+    id_tipo_produto INT NOT NULL,
+    id_ingrediente INT,
+    constraint FK_tipo_produto_produto_ingrediente
+		foreign key (id_tipo_produto)
+			references tbl_tipo_produto(id),
     constraint FK_ingrediente_produto_ingrediente
 		foreign key (id_ingrediente)
 			references tbl_ingrediente(id),
     unique index (id)        
 );
- 
+
+create table tbl_tipo_bebida (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR (20),
+	unique index (id)
+);
 
 create table tbl_bebida (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -91,11 +99,12 @@ create table tbl_bebida (
 );
 
 
-create table tbl_tipo_bebida (
+create table tbl_tipo_pizza (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tipo VARCHAR (20),
 	unique index (id)
 );
+
 
 create table tbl_pizza (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -111,16 +120,15 @@ create table tbl_pizza (
     unique index(id)
 );
 
-create table tbl_tipo_pizza (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR (20),
-	unique index (id)
-);
-
-
 ##############################################################
 
 # tabela de MENSAGEM
+
+create table tbl_tipo_mensagem (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR (15) NOT NULL,
+    unique index (id)
+);
 
 create table tbl_mensagem (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -134,13 +142,6 @@ create table tbl_mensagem (
     foreign key (id_tipo_mensagem)
     references tbl_tipo_mensagem(id),
     unique index(id)
-);
-
-
-create table tbl_tipo_mensagem (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR (15) NOT NULL,
-    unique index (id)
 );
 
 #####################################################################

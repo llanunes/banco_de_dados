@@ -1,17 +1,24 @@
-select * from tbl_ingrediente;
-select * from tbl_produto;
-select * from tbl_produto_ingrediente;
-select * from tbl_mensagem;
-select * from tbl_tipo_mensagem;
-select * from tbl_bebida;
-select * from tbl_pizza;
-select * from tbl_tipo_bebida;
-select * from tbl_tipo_pizza;
-select * from tbl_administrador;
-select * from tbl_tipo_produto;
-
+SELECT * FROM tbl_ingrediente;
+SELECT * FROM tbl_produto;
+SELECT * FROM tbl_produto_ingrediente;
+SELECT * FROM tbl_mensagem;
+SELECT * FROM tbl_tipo_mensagem;
+SELECT * FROM tbl_bebida;
+SELECT * FROM tbl_pizza;
+SELECT * FROM tbl_tipo_bebida;
+SELECT * FROM tbl_tipo_pizza;
+SELECT * FROM tbl_administrador;
+SELECT * FROM tbl_tipo_produto;
 
 #################################################################### INSERT TESTE ###################################################################################
+
+INSERT INTO tbl_tipo_produto(
+	tipo
+) values (
+	'Pizza'
+), (
+	'Bebida'
+);
 
 # insert tabela produto
 INSERT INTO tbl_produto (
@@ -37,13 +44,6 @@ INSERT INTO tbl_produto (
     2
 );
 
-INSERT INTO tbl_tipo_produto(
-	tipo
-) values (
-	'Pizza'
-), (
-	'Bebida'
-);
 
 # insert tabela ingrediente
 
@@ -115,7 +115,7 @@ INSERT INTO tbl_bebida(
 );
 
 INSERT INTO tbl_produto_ingrediente (
-	id_produto,
+	id_tipo_produto,
     id_ingrediente
 ) values 
 (1,1),
@@ -142,3 +142,25 @@ INSERT INTO tbl_tipo_bebida (
 ), (
 	'Refrigerante'
 );
+
+INSERT INTO tbl_administrador (
+	email,
+    senha,
+    nome
+) values (
+	'root.senailicious@gmail.com',
+    '12202345',
+    'root'
+);
+
+
+
+select cast(id as float) as 
+    id, 
+    nome, 
+    imagem, 
+    tamanho, 
+    preco, 
+    desconto, 
+    id_tipo_produto
+    from tbl_produto order by id desc;
