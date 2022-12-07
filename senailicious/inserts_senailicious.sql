@@ -146,7 +146,8 @@ INSERT INTO tbl_tipo_bebida (
 INSERT INTO tbl_administrador (
 	email,
     senha,
-    nome
+    nome,
+    foto
 ) values (
 	'root.senailicious@gmail.com',
     '12202345',
