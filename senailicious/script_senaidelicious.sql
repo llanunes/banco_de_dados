@@ -1,36 +1,20 @@
 # projeto pizzaria senailicious
 
-create database db_senailicious;
-use db_senailicious;
-show tables;
+CREATE DATABASE db_senailicious;
+USE db_senailicious;
+SHOW TABLES;
 
-select * from tbl_ingrediente;
-select * from tbl_produto;
-select * from tbl_produto_ingrediente;
-select * from tbl_mensagem;
-select * from tbl_tipo_mensagem;
-select * from tbl_bebida;
-select * from tbl_pizza;
-select * from tbl_tipo_bebida;
-select * from tbl_tipo_pizza;
-select * from tbl_administrador;
-select * from tbl_tipo_produto;
-
-
-drop table tbl_pizza;
-drop table tbl_bebida;
-drop table tbl_tipo_produto;
-drop table tbl_produto_ingrediente;
-drop table tbl_mensagem;
-drop table tbl_ingrediente;
-drop table tbl_produto;
-drop table tbl_produto_ingrediente;
-drop table tbl_tipo_produto;
-drop table tbl_tipo_pizza;
-drop table tbl_tipo_bebida;
-drop table tbl_tipo_mensagem;
-drop table teste;
-
+SELECT * FROM tbl_ingrediente;
+SELECT * FROM tbl_produto;
+SELECT * FROM tbl_produto_ingrediente;
+SELECT * FROM tbl_mensagem;
+SELECT * FROM tbl_tipo_mensagem;
+SELECT * FROM tbl_bebida;
+SELECT * FROM tbl_pizza;
+SELECT * FROM tbl_tipo_bebida;
+SELECT * FROM tbl_tipo_pizza;
+SELECT * FROM tbl_administrador;
+SELECT * FROM tbl_tipo_produto;
 
 ##############################################################
 
@@ -152,9 +136,11 @@ create table tbl_administrador (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(256) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    nome VARCHAR(100) NOT NULL, 	
-    unique index (id)
+    nome VARCHAR(100) NOT NULL,
+	foto VARCHAR(400), 
+	unique index (id)
 );
+
 
 
 

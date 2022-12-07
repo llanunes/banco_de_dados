@@ -58,4 +58,3 @@ INNER JOIN tbl_bebida
     ON  tbl_produto.id = tbl_bebida.id_produto
 INNER JOIN tbl_tipo_bebida
     ON tbl_tipo_bebida.id = tbl_bebida.id_tipo_bebida;
-
