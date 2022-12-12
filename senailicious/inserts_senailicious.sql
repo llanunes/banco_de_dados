@@ -115,7 +115,7 @@ INSERT INTO tbl_bebida(
 );
 
 INSERT INTO tbl_produto_ingrediente (
-	id_tipo_produto,
+	id_produto,
     id_ingrediente
 ) values 
 (1,1),
@@ -146,8 +146,7 @@ INSERT INTO tbl_tipo_bebida (
 INSERT INTO tbl_administrador (
 	email,
     senha,
-    nome,
-    foto
+    nome
 ) values (
 	'root.senailicious@gmail.com',
     '12202345',
@@ -155,6 +154,17 @@ INSERT INTO tbl_administrador (
 );
 
 
+DELIMITER $ 
+
+CREATE TRIGGER tgrInsertProdutoTipoPizza
+	AFTER INSERT ON tbl_produto
+		for each row
+        BEGIN
+			INSERT INTO tbl_pizza 
+            VALUES(
+				
+            )
+        END$
 
 select cast(id as float) as 
     id, 
@@ -165,3 +175,10 @@ select cast(id as float) as
     desconto, 
     id_tipo_produto
     from tbl_produto order by id desc;
+    
+    select cast(id as float) as 
+        id, 
+        nome, 
+        email, 
+        senha
+    from tbl_administrador order by id desc;
