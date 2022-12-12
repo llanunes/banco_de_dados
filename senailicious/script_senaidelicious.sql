@@ -50,13 +50,15 @@ create table tbl_produto (
 ALTER TABLE tbl_produto
 	MODIFY column preco DECIMAL(4,2);
 
+drop table tbl_produto_ingrediente;
+
 create table tbl_produto_ingrediente (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_tipo_produto INT NOT NULL,
+    id_produto INT NOT NULL,
     id_ingrediente INT,
-    constraint FK_tipo_produto_produto_ingrediente
-		foreign key (id_tipo_produto)
-			references tbl_tipo_produto(id),
+    constraint FK_produto_produto_ingrediente
+		foreign key (id_produto)
+			references tbl_produto(id),
     constraint FK_ingrediente_produto_ingrediente
 		foreign key (id_ingrediente)
 			references tbl_ingrediente(id),
@@ -82,6 +84,7 @@ create table tbl_bebida (
    unique index (id)
 );
 
+DROP TABLE tbl_produto_ingrediente;
 
 create table tbl_tipo_pizza (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
